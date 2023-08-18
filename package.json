@@ -44,12 +44,15 @@
     "eslint": "^8.46.0",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.3",
+    "npm-run-all": "^4.1.5",
     "prettier": "^3.0.1",
     "rimraf": "^5.0.1",
     "stylelint": "^15.10.2",
     "syncpack": "^11.2.1",
     "turbo": "^1.10.12",
-    "typescript": "^5.1.6"
+    "typescript": "^5.1.6",
+    "vite": "^4.4.9",
+    "vue-tsc": "^1.8.8"
   },
   "config": {
     "commitizen": {

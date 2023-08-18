@@ -1,0 +1,24 @@
+<script setup lang="ts">
+import type { NIconProps } from '@teleskop-labs/ui-kit-icon'
+import { NIcon } from '@teleskop-labs/ui-kit-icon'
+
+defineOptions({
+  name: 'NIconArrowLeft',
+})
+
+const props = defineProps<NIconProps>()
+</script>
+
+<template>
+  <NIcon v-bind="props">
+    <svg width="24" height="24" viewBox="0 0 24 24">
+      <path fill="#fff" fill-opacity=".01" d="M0 0h24v24H0z" />
+      <path
+        fill="currentColor"
+        fill-rule="evenodd"
+        d="M12.207 5.793a1 1 0 0 1 0 1.414L8.414 11H18a1 1 0 1 1 0 2H8.414l3.793 3.793a1 1 0 1 1-1.415 1.414l-5.499-5.5A.997.997 0 0 1 5 12.028v-.057a.996.996 0 0 1 .293-.678l5.499-5.5a1 1 0 0 1 1.415 0z"
+        clip-rule="evenodd"
+      />
+    </svg>
+  </NIcon>
+</template>

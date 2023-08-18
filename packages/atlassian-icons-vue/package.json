@@ -1,0 +1,63 @@
+{
+  "name": "@teleskop-labs/atlassian-icons-vue",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "import": "./src/index.ts"
+    },
+    "./bitbucket": {
+      "types": "./src/bitbucket/index.ts",
+      "import": "./src/bitbucket/index.ts"
+    },
+    "./editor": {
+      "types": "./src/editor/index.ts",
+      "import": "./src/editor/index.ts"
+    },
+    "./emoji": {
+      "types": "./src/emoji/index.ts",
+      "import": "./src/emoji/index.ts"
+    },
+    "./hipchat": {
+      "types": "./src/hipchat/index.ts",
+      "import": "./src/hipchat/index.ts"
+    },
+    "./jira": {
+      "types": "./src/jira/index.ts",
+      "import": "./src/jira/index.ts"
+    },
+    "./media-services": {
+      "types": "./src/media-services/index.ts",
+      "import": "./src/media-services/index.ts"
+    }
+  },
+  "scripts": {
+    "type-check": "vue-tsc --noEmit -p ./tsconfig.app.json --composite false",
+    "generate": "pnpm run generate-only && pnpm run prettier:fix && pnpm run eslint:fix && pnpm run type-check",
+    "generate-only": "tsx build-icons/generate.ts",
+    "prettier": "prettier --check --ignore-unknown \"**/*\"",
+    "prettier:fix": "prettier --write --ignore-unknown \"**/*\"",
+    "eslint": "eslint \"**/*.{js,jsx,cjs,mjs,ts,tsx,cts,mts,json,vue}\"",
+    "eslint:fix": "eslint --fix \"**/*.{js,jsx,cjs,mjs,ts,tsx,cts,mts,json,vue}\" --fix"
+  },
+  "peerDependencies": {
+    "vue": "^3.3.0"
+  },
+  "dependencies": {
+    "@teleskop-labs/ui-kit-icon": "workspace:*"
+  },
+  "devDependencies": {
+    "@teleskop-labs/atlassian-icons-svg": "workspace:*",
+    "@pnpm/find-workspace-dir": "^6.0.2",
+    "@pnpm/workspace.find-packages": "^1.0.5",
+    "@types/fs-extra": "^11.0.1",
+    "chalk": "^5.3.0",
+    "consola": "^3.2.3",
+    "fast-glob": "^3.3.1",
+    "fs-extra": "^11.1.1",
+    "tsx": "^3.12.7"
+  }
+}

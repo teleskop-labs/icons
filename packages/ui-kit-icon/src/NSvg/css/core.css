@@ -1,0 +1,14 @@
+@layer components.defaults {
+  .n-svg {
+    width: var(--n-comp-svg-size-width, auto);
+    height: var(--n-comp-svg-size-height, auto);
+
+    color: var(--n-comp-svg-primary-color);
+
+    fill: var(--n-comp-svg-secondary-color);
+
+    overflow: hidden;
+
+    pointer-events: none;
+  }
+}
