@@ -45,10 +45,13 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
 
-      - name: Install dependencies
+      - name: Install dependencies 📦
         run: pnpm install
 
-      - name: Create Snapshot Release
+      - name: Build 🤞
+        run: pnpm install
+
+      - name: Create Snapshot Release 🚀
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
