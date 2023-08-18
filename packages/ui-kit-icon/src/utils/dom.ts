@@ -1,8 +1,7 @@
-import { debugWarn } from "./error"
-import { isNumber, isString, isStringNumber } from "./shared"
+import { debugWarn } from './error'
+import { isNumber, isString, isStringNumber } from './shared'
 
 const SCOPE = 'utils/dom/style'
-
 
 export function addUnit(value?: string | number, defaultUnit = 'px') {
   if (!value) {
@@ -21,5 +20,3 @@ export function addUnit(value?: string | number, defaultUnit = 'px') {
 
   return ''
 }
-
-

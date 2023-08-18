@@ -1,4 +1,4 @@
-import { isString } from "./shared"
+import { isString } from './shared'
 
 class NadoError extends Error {
   public constructor(m: string) {

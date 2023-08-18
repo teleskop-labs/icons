@@ -1,3 +1,3 @@
 module.exports = {
-  ...require('@nado/prettier-config'),
+  ...require('@teleskop-labs/prettier-config'),
 }

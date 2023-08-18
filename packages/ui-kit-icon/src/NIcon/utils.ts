@@ -1,5 +1,5 @@
 import { addUnit } from '@nado/ui-kit-utils'
-import { computedEager } from '@vueuse/core'
+import { computed } from 'vue'
 import type { Ref } from 'vue'
 
 import { dimensions } from '../constants'
@@ -13,7 +13,7 @@ interface Props {
 }
 
 export function getIconSize(props: Props) {
-  return computedEager(() => {
+  return computed(() => {
     const size = getSizeRaw(props)
 
     if (!size) {
