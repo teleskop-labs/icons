@@ -1,8 +1,8 @@
-import { addUnit } from '@nado/ui-kit-utils'
-import { computed } from 'vue'
 import type { Ref } from 'vue'
+import { computed } from 'vue'
 
 import { dimensions } from '../constants'
+import { addUnit } from '../utils'
 // TODO: можно, наверное, экспортировать из компонента interface пропросов и остальное, если надо
 import type { NInternalIconProps } from './NIcon.model'
 

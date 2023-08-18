@@ -1,3 +1,3 @@
 module.exports = {
-  extends: ['@nado/stylelint-config-css'],
+  extends: ['@teleskop-labs/stylelint-config-css'],
 }

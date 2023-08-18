@@ -6,35 +6,41 @@
   "sideEffects": false,
   "exports": {
     ".": {
-      "types": "./src/index.ts",
-      "import": "./src/index.ts"
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
     },
     "./bitbucket": {
-      "types": "./src/bitbucket/index.ts",
-      "import": "./src/bitbucket/index.ts"
+      "types": "./dist/bitbucket/index.d.ts",
+      "import": "./dist/bitbucket/index.js"
     },
     "./editor": {
-      "types": "./src/editor/index.ts",
-      "import": "./src/editor/index.ts"
+      "types": "./dist/editor/index.d.ts",
+      "import": "./dist/editor/index.js"
     },
     "./emoji": {
-      "types": "./src/emoji/index.ts",
-      "import": "./src/emoji/index.ts"
+      "types": "./dist/emoji/index.d.ts",
+      "import": "./dist/emoji/index.js"
     },
     "./hipchat": {
-      "types": "./src/hipchat/index.ts",
-      "import": "./src/hipchat/index.ts"
+      "types": "./dist/hipchat/index.d.ts",
+      "import": "./dist/hipchat/index.js"
     },
     "./jira": {
-      "types": "./src/jira/index.ts",
-      "import": "./src/jira/index.ts"
+      "types": "./dist/jira/index.d.ts",
+      "import": "./dist/jira/index.js"
     },
     "./media-services": {
-      "types": "./src/media-services/index.ts",
-      "import": "./src/media-services/index.ts"
+      "types": "./dist/media-services/index.d.ts",
+      "import": "./dist/media-services/index.js"
     }
   },
+  "module": "./dist/index.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
+    "build": "run-p type-check build-only",
+    "build-only": "vite build",
     "type-check": "vue-tsc --noEmit -p ./tsconfig.app.json --composite false",
     "generate": "pnpm run generate-only && pnpm run prettier:fix && pnpm run eslint:fix && pnpm run type-check",
     "generate-only": "tsx build-icons/generate.ts",
@@ -50,9 +56,9 @@
     "@teleskop-labs/ui-kit-icon": "workspace:*"
   },
   "devDependencies": {
-    "@teleskop-labs/atlassian-icons-svg": "workspace:*",
     "@pnpm/find-workspace-dir": "^6.0.2",
     "@pnpm/workspace.find-packages": "^1.0.5",
+    "@teleskop-labs/atlassian-icons-svg": "workspace:*",
     "@types/fs-extra": "^11.0.1",
     "chalk": "^5.3.0",
     "consola": "^3.2.3",

@@ -1,7 +1,7 @@
-import { defintDefaultProps, type NPropsWithDefaults } from '../utils'
 import type { VNode } from 'vue'
 
 import type { GlyphColorProps, GlyphSizeProps, OtherGlyphProps } from '../types'
+import { defintDefaultProps, type NPropsWithDefaults } from '../utils'
 
 // Props
 

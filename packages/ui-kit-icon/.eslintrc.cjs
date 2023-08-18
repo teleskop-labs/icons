@@ -6,7 +6,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  extends: ['@nado/eslint-config-vue'],
+  extends: ['@teleskop-labs/eslint-config-vue'],
   rules: {
     'vue/no-unused-vars': 'error',
   },

@@ -1,5 +1,5 @@
 {
-  "extends": "@nado/tsconfig/tsconfig.node.json",
+  "extends": "@teleskop-labs/tsconfig/tsconfig.node.json",
   "include": ["vite.config.*"],
   "compilerOptions": {
     "composite": true,
