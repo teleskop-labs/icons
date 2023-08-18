@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import type { NIconProps } from '@nado/ui-kit-icon'
-import { NIcon } from '@nado/ui-kit-icon'
+import type { NIconProps } from '@icon/NIcon'
+import { NIcon } from '@icon/NIcon'
 
 defineOptions({
   name: 'NIconRectangle',

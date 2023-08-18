@@ -98,9 +98,6 @@ importers:
 
   packages/atlassian-icons-vue:
     dependencies:
-      '@nado/ui-kit-icon':
-        specifier: workspace:*
-        version: link:../ui-kit-icon
       vue:
         specifier: ^3.3.0
         version: 3.3.0

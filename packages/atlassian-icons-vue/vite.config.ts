@@ -53,4 +53,9 @@ export default defineConfig({
       },
     },
   },
+  resolve: {
+    alias: {
+      '@icon': fileURLToPath(new URL('ui-kit-icon', import.meta.url)),
+    },
+  },
 })

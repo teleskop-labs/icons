@@ -1,9 +1,0 @@
-{
-  "extends": "@teleskop-labs/tsconfig/tsconfig.node.json",
-  "include": ["vite.config.*"],
-  "compilerOptions": {
-    "composite": true,
-    "libs": ["ESNext", "DOM", "DOM.Iterable"],
-    "types": ["node"]
-  }
-}

@@ -6,13 +6,17 @@
     "src/**/*.ts",
     "src/**/*.tsx",
     "src/**/*.vue",
-    "../ui-kit-icon/**/*.vue"
+    "ui-kit-icon/**/*.ts",
+    "ui-kit-icon/**/*.vue"
   ],
   "exclude": ["node_modules", "src/**/__tests__/*"],
   "compilerOptions": {
     "composite": true,
     "baseUrl": ".",
     "libs": ["ESNext", "DOM", "DOM.Iterable"],
-    "types": ["node"]
+    "types": ["node"],
+    "paths": {
+      "@icon/*": ["./ui-kit-icon/*"]
+    }
   }
 }

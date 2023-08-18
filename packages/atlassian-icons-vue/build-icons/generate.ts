@@ -49,8 +49,8 @@ async function transformToVueComponent(file: string) {
   const content = await readFile(file, 'utf8')
   const { dirname, componentName } = getName(file)
   const vue = `<script setup lang="ts">
-import type { NIconProps } from '@nado/ui-kit-icon'
-import { NIcon } from '@nado/ui-kit-icon'
+import type { NIconProps } from '@icon/NIcon'
+import { NIcon } from '@icon/NIcon'
 
 defineOptions({
   name: '${componentName}',
