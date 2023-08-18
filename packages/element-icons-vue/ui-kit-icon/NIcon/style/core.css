@@ -1,0 +1,27 @@
+@layer components.defaults {
+  .n-icon {
+    display: inline-block;
+    flex-shrink: 0;
+
+    width: var(--n-comp-icon-size-width, auto);
+    height: var(--n-comp-icon-size-height, auto);
+
+    line-height: 1;
+  }
+
+  .n-icon > svg {
+    width: var(--n-comp-icon-size-width, auto);
+    height: var(--n-comp-icon-size-height, auto);
+    max-width: 100%;
+    max-height: 100%;
+
+    color: var(--n-comp-icon-primary-color);
+    vertical-align: bottom;
+
+    fill: var(--n-comp-icon-secondary-color);
+
+    overflow: hidden;
+
+    pointer-events: none;
+  }
+}
