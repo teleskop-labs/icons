@@ -5,31 +5,31 @@
   "sideEffects": false,
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
+      "types": "./dist/types/src/index.d.ts",
       "import": "./dist/index.js"
     },
     "./bitbucket": {
-      "types": "./dist/bitbucket/index.d.ts",
+      "types": "./dist/types/src/bitbucket/index.d.ts",
       "import": "./dist/bitbucket/index.js"
     },
     "./editor": {
-      "types": "./dist/editor/index.d.ts",
+      "types": "./dist/types/src/editor/index.d.ts",
       "import": "./dist/editor/index.js"
     },
     "./emoji": {
-      "types": "./dist/emoji/index.d.ts",
+      "types": "./dist/types/src/emoji/index.d.ts",
       "import": "./dist/emoji/index.js"
     },
     "./hipchat": {
-      "types": "./dist/hipchat/index.d.ts",
+      "types": "./dist/types/src/hipchat/index.d.ts",
       "import": "./dist/hipchat/index.js"
     },
     "./jira": {
-      "types": "./dist/jira/index.d.ts",
+      "types": "./dist/types/src/jira/index.d.ts",
       "import": "./dist/jira/index.js"
     },
     "./media-services": {
-      "types": "./dist/media-services/index.d.ts",
+      "types": "./dist/types/src/media-services/index.d.ts",
       "import": "./dist/media-services/index.js"
     }
   },

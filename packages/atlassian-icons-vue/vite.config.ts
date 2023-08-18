@@ -31,7 +31,16 @@ const entries = {
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue(), vueJsx(), ds()],
+  plugins: [
+    vue(),
+    vueJsx(),
+    ds({
+      // staticImport: true,
+      outDir: 'dist/types',
+      // insertTypesEntry: true,
+      tsconfigPath: 'tsconfig.app.json',
+    }),
+  ],
   build: {
     target: 'modules',
     cssTarget: 'chrome115',
