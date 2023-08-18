@@ -49,7 +49,7 @@ jobs:
         run: pnpm install
 
       - name: Build 🤞
-        run: pnpm install
+        run: pnpm build
 
       - name: Create Snapshot Release 🚀
         env:

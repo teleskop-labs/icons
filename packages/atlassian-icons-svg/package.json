@@ -1,7 +1,6 @@
 {
   "name": "@teleskop-labs/atlassian-icons-svg",
   "version": "0.0.0",
-  "private": true,
   "files": [
     "/src/**/*.svg"
   ],
