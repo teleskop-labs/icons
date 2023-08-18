@@ -39,6 +39,8 @@
     "@teleskop-labs/stylelint-config-css": "0.0.0-dev-20230818162408",
     "@teleskop-labs/tsconfig": "0.0.0-dev-20230818162408",
     "@types/node": "^18.17.4",
+    "@vitejs/plugin-vue": "^4.3.1",
+    "@vitejs/plugin-vue-jsx": "^3.0.2",
     "commitizen": "^4.3.0",
     "cz-conventional-changelog": "^3.3.0",
     "editorconfig-checker": "^5.1.1",
