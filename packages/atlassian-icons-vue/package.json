@@ -53,7 +53,7 @@
     "vue": "^3.3.0"
   },
   "dependencies": {
-    "@teleskop-labs/ui-kit-icon": "workspace:*"
+    "@nado/ui-kit-icon": "workspace:*"
   },
   "devDependencies": {
     "@pnpm/find-workspace-dir": "^6.0.2",

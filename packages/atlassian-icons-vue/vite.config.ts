@@ -4,33 +4,46 @@ import { fileURLToPath } from 'node:url'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import { defineConfig } from 'vite'
+import ds from 'vite-plugin-dts'
 
-// const __dirname = path.dirname(fileURLToPath(import.meta.url));
+function getEntry(name?: string) {
+  if (!name) {
+    return path.resolve(path.dirname(fileURLToPath(import.meta.url)), './src/index.ts')
+  }
 
-// const computedRendererNames = ["firstRenderer", "secondRenderer"];
+  return path.resolve(path.dirname(fileURLToPath(import.meta.url)), `./src/${name}/index.ts`)
+}
+
+const entries = {
+  ...['bitbucket', 'editor', 'emoji', 'hipchat', 'jira', 'media-services'].reduce(
+    (acc, name) => {
+      const entry = getEntry(name)
+
+      return {
+        ...acc,
+        [`${name}/index`]: entry,
+      }
+    },
+    {} as Record<string, string>,
+  ),
+  index: getEntry(),
+}
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue(), vueJsx()],
-  resolve: {
-    mainFields: ['module', 'main', 'jsnext:main', 'jsnext'],
-  },
+  plugins: [vue(), vueJsx(), ds()],
   build: {
     target: 'modules',
     cssTarget: 'chrome115',
     lib: {
       // Could also be a dictionary or array of multiple entry points
-      // entry: resolve(__dirname, 'dist/main.js'),
-      entry: path.resolve(path.dirname(fileURLToPath(import.meta.url)), './src/index.ts'),
-      name: 'MyLib',
-      // the proper extensions will be added
-      fileName: 'my-lib',
+      entry: entries,
       formats: ['es'],
     },
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled
       // into your library
-      external: ['vue'],
+      external: ['vue', '@nado/ui-kit-icon'],
       output: {
         // Provide global variables to use in the UMD build
         // for externalized deps

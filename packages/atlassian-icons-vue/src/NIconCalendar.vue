@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import type { NIconProps } from '@teleskop-labs/ui-kit-icon'
-import { NIcon } from '@teleskop-labs/ui-kit-icon'
+import type { NIconProps } from '@nado/ui-kit-icon'
+import { NIcon } from '@nado/ui-kit-icon'
 
 defineOptions({
   name: 'NIconCalendar',
