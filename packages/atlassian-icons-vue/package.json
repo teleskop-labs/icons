@@ -39,6 +39,7 @@
   ],
   "scripts": {
     "build": "run-p type-check build-only",
+    "foo": "tsx foo.ts",
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit -p ./tsconfig.app.json --composite false",
     "generate": "pnpm run generate-only && pnpm run prettier:fix && pnpm run eslint:fix && pnpm run type-check",

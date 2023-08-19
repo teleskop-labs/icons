@@ -30,7 +30,7 @@ function snakeToCamel(string: string) {
 function getName(file: string) {
   let dirname = path.dirname(file).split('/').pop()
 
-  dirname = dirname === 'src' ? '' : `/${dirname}`
+  dirname = dirname === 'src' ? '/core' : `/${dirname}`
 
   let filename = path.basename(file).replace('.svg', '')
 

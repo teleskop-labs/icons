@@ -1,3 +1,3 @@
 module.exports = {
-  extends: ['@teleskop-labsstylelint-config-css'],
+  extends: ['@teleskop-labs/stylelint-config-css'],
 }
