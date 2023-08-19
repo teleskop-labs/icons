@@ -1,6 +1,6 @@
 {
   "name": "@teleskop-labs/element-icons-svg",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "files": [
     "/src/**/*.svg"
   ],
