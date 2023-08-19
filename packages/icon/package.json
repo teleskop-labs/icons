@@ -1,0 +1,38 @@
+{
+  "name": "@teleskop-labs/icon",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "sideEffects": false,
+  "module": "./src/index.ts",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "build": "run-p type-check build-only",
+    "build-only": "vite build",
+    "type-check": "vue-tsc --noEmit -p ./tsconfig.app.json --composite false",
+    "generate": "pnpm run generate-only && pnpm run prettier:fix && pnpm run eslint:fix && pnpm run type-check",
+    "generate-only": "tsx build-icons/generate.ts",
+    "prettier": "prettier --check --ignore-unknown \"**/*\"",
+    "prettier:fix": "prettier --write --ignore-unknown \"**/*\"",
+    "eslint": "eslint \"**/*.{js,jsx,cjs,mjs,ts,tsx,cts,mts,json,vue}\"",
+    "eslint:fix": "eslint --fix \"**/*.{js,jsx,cjs,mjs,ts,tsx,cts,mts,json,vue}\" --fix"
+  },
+  "peerDependencies": {
+    "vue": "^3.3.0"
+  },
+  "devDependencies": {
+    "@pnpm/find-workspace-dir": "^6.0.2",
+    "@pnpm/workspace.find-packages": "^1.0.5",
+    "@teleskop-labs/atlassian-icons-svg": "workspace:*",
+    "@types/fs-extra": "^11.0.1",
+    "chalk": "^5.3.0",
+    "consola": "^3.2.3",
+    "fast-glob": "^3.3.1",
+    "fs-extra": "^11.1.1",
+    "tsx": "^3.12.7"
+  }
+}

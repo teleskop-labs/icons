@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import type { NIconProps } from '@icon/NIcon'
-import { NIcon } from '@icon/NIcon'
+import type { NIconProps } from '@teleskop-labs/icon'
+import { NIcon } from '@teleskop-labs/icon'
 
 defineOptions({
   name: 'NIconCode',

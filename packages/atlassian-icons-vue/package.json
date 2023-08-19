@@ -51,6 +51,9 @@
   "peerDependencies": {
     "vue": "^3.3.0"
   },
+  "dependencies": {
+    "@teleskop-labs/icon": "workspace:*"
+  },
   "devDependencies": {
     "@pnpm/find-workspace-dir": "^6.0.2",
     "@pnpm/workspace.find-packages": "^1.0.5",
