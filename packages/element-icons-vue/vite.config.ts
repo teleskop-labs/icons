@@ -1,21 +1,20 @@
-import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import { defineConfig } from 'vite'
 import ds from 'vite-plugin-dts'
+import { libInjectCss, scanEntries } from 'vite-plugin-lib-inject-css'
+import { viteStaticCopy } from 'vite-plugin-static-copy'
 
-function getEntry(name?: string) {
-  if (!name) {
-    return path.resolve(path.dirname(fileURLToPath(import.meta.url)), './src/index.ts')
+function scan() {
+  const entries = scanEntries('src')
+
+  if (entries['index']) {
+    delete entries['index']
   }
 
-  return path.resolve(path.dirname(fileURLToPath(import.meta.url)), `./src/${name}/index.ts`)
-}
-
-const entries = {
-  index: getEntry(),
+  return entries
 }
 
 // https://vitejs.dev/config/
@@ -24,18 +23,30 @@ export default defineConfig({
     vue(),
     vueJsx(),
     ds({
-      // staticImport: true,
-      outDir: 'dist/types',
-      // insertTypesEntry: true,
+      entryRoot: './src',
+      cleanVueFileName: true,
       tsconfigPath: 'tsconfig.app.json',
+    }),
+    libInjectCss(),
+    viteStaticCopy({
+      targets: [
+        {
+          src: `src/index.ts`,
+          dest: '',
+          rename: 'index.js',
+          transform: (contents: string) => contents.toString().replaceAll(/.vue/g, ''),
+        },
+      ],
     }),
   ],
   build: {
-    target: 'modules',
+    target: 'esnext',
     cssTarget: 'chrome115',
+    cssCodeSplit: true,
+    copyPublicDir: false,
     lib: {
       // Could also be a dictionary or array of multiple entry points
-      entry: entries,
+      entry: scan(),
       formats: ['es'],
     },
     rollupOptions: {
@@ -43,6 +54,12 @@ export default defineConfig({
       // into your library
       external: ['vue'],
       output: {
+        preserveModules: false,
+        // Put chunk files at <output>/chunks
+        chunkFileNames: 'chunks/[name].[hash].js',
+        // Put chunk styles at <output>/assets
+        assetFileNames: 'assets/[name][extname]',
+        entryFileNames: '[name].js',
         // Provide global variables to use in the UMD build
         // for externalized deps
         globals: {

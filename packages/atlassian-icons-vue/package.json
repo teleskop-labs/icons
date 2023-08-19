@@ -5,41 +5,40 @@
   "sideEffects": false,
   "exports": {
     ".": {
-      "types": "./dist/types/src/index.d.ts",
-      "import": "./dist/index.js"
+      "types": "./dist/core/index.d.ts",
+      "import": "./dist/core/index.js"
     },
     "./bitbucket": {
-      "types": "./dist/types/src/bitbucket/index.d.ts",
+      "types": "./dist/bitbucket/index.d.ts",
       "import": "./dist/bitbucket/index.js"
     },
     "./editor": {
-      "types": "./dist/types/src/editor/index.d.ts",
+      "types": "./dist/editor/index.d.ts",
       "import": "./dist/editor/index.js"
     },
     "./emoji": {
-      "types": "./dist/types/src/emoji/index.d.ts",
+      "types": "./dist/emoji/index.d.ts",
       "import": "./dist/emoji/index.js"
     },
     "./hipchat": {
-      "types": "./dist/types/src/hipchat/index.d.ts",
+      "types": "./dist/hipchat/index.d.ts",
       "import": "./dist/hipchat/index.js"
     },
     "./jira": {
-      "types": "./dist/types/src/jira/index.d.ts",
+      "types": "./dist/jira/index.d.ts",
       "import": "./dist/jira/index.js"
     },
     "./media-services": {
-      "types": "./dist/types/src/media-services/index.d.ts",
+      "types": "./dist/media-services/index.d.ts",
       "import": "./dist/media-services/index.js"
     }
   },
-  "module": "./dist/index.js",
+  "module": "./dist/core/index.js",
   "files": [
     "dist"
   ],
   "scripts": {
     "build": "run-p type-check build-only",
-    "foo": "tsx foo.ts",
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit -p ./tsconfig.app.json --composite false",
     "generate": "pnpm run generate-only && pnpm run prettier:fix && pnpm run eslint:fix && pnpm run type-check",
