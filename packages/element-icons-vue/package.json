@@ -9,8 +9,6 @@
     "dist"
   ],
   "scripts": {
-    "build": "run-p type-check build-only",
-    "build-only": "vite build",
     "type-check": "vue-tsc --noEmit -p ./tsconfig.app.json --composite false",
     "generate": "pnpm run generate-only && pnpm run prettier:fix && pnpm run eslint:fix && pnpm run type-check",
     "generate-only": "tsx build-icons/generate.ts",
@@ -23,7 +21,7 @@
     "vue": "^3.3.0"
   },
   "dependencies": {
-    "@teleskop-labs/icon": "workspace:*"
+    "@teleskop-labs/ui-kit-icon": "workspace:*"
   },
   "devDependencies": {
     "@pnpm/find-workspace-dir": "^6.0.2",

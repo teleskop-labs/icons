@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import type { NIconProps } from '@teleskop-labs/icon'
-import { NIcon } from '@teleskop-labs/icon'
+import type { NIconProps } from '@teleskop-labs/ui-kit-icon'
+import { NIcon } from '@teleskop-labs/ui-kit-icon'
 
 defineOptions({
   name: 'NIconWarningFilled',

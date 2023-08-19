@@ -1,4 +1,3 @@
-/* eslint-env node */
 require('@rushstack/eslint-patch/modern-module-resolution')
 
 module.exports = {
@@ -8,4 +7,7 @@ module.exports = {
     sourceType: 'module',
   },
   extends: ['@teleskop-labs/eslint-config-vue'],
+  rules: {
+    'vue/no-unused-vars': 'error',
+  },
 }

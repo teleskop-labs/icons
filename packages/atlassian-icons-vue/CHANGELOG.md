@@ -11,7 +11,7 @@
 ### Patch Changes
 
 - NIcon
-  - @teleskop-labs/icon@0.0.0
+  - @teleskop-labs/ui-kit-icon@0.0.0
 
 ## 0.0.1
 

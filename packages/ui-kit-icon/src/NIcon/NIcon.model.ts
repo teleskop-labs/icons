@@ -3,6 +3,8 @@ import type { VNode } from 'vue'
 import type { GlyphColorProps, GlyphSizeProps, OtherGlyphProps } from '../types'
 import { defintDefaultProps, type NPropsWithDefaults } from '../utils'
 
+// Props
+
 export interface NIconProps extends OtherGlyphProps, GlyphSizeProps, GlyphColorProps {}
 
 /**

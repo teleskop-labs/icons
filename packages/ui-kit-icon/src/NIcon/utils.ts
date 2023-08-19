@@ -1,4 +1,3 @@
-import type { Ref } from 'vue'
 import { computed } from 'vue'
 
 import { dimensions } from '../constants'
@@ -6,13 +5,7 @@ import { addUnit } from '../utils'
 // TODO: можно, наверное, экспортировать из компонента interface пропросов и остальное, если надо
 import type { NInternalIconProps } from './NIcon.model'
 
-interface Props {
-  readonly size: Ref<NInternalIconProps['size']>
-  readonly width: Ref<NInternalIconProps['width']>
-  readonly height: Ref<NInternalIconProps['height']>
-}
-
-export function getIconSize(props: Props) {
+export function getIconSize(props: NInternalIconProps) {
   return computed(() => {
     const size = getSizeRaw(props)
 
@@ -27,13 +20,13 @@ export function getIconSize(props: Props) {
   })
 }
 
-function getSizeRaw({ width, height, size }: Props) {
-  if (width.value && height.value) {
-    return { width: width.value, height: height.value }
+function getSizeRaw({ width, height, size }: NInternalIconProps) {
+  if (width && height) {
+    return { width, height }
   }
 
-  if (size.value) {
-    return dimensions[size.value]
+  if (size) {
+    return dimensions[size]
   }
 
   return undefined

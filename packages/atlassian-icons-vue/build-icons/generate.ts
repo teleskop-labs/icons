@@ -49,8 +49,8 @@ async function transformToVueComponent(file: string) {
   const content = await readFile(file, 'utf8')
   const { dirname, componentName } = getName(file)
   const vue = `<script setup lang="ts">
-import type { NIconProps } from '@teleskop-labs/icon'
-import { NIcon } from '@teleskop-labs/icon'
+import type { NIconProps } from '@teleskop-labs/ui-kit-icon'
+import { NIcon } from '@teleskop-labs/ui-kit-icon'
 
 defineOptions({
   name: '${componentName}',

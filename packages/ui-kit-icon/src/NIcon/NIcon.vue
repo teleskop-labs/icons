@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { toRef } from 'vue'
-
 import type { NIconSlots, NInternalIconProps } from './NIcon.model'
 import { NInternalIconDefaultProps } from './NIcon.model'
 import { getIconSize } from './utils'
@@ -13,11 +11,7 @@ const props = withDefaults(defineProps<NInternalIconProps>(), NInternalIconDefau
 
 defineSlots<NIconSlots>()
 
-const dimensions = getIconSize({
-  width: toRef(props, 'width'),
-  height: toRef(props, 'height'),
-  size: toRef(props, 'size'),
-})
+const dimensions = getIconSize(props)
 </script>
 
 <template>
@@ -37,5 +31,5 @@ const dimensions = getIconSize({
 </template>
 
 <style>
-@import url('./style/index.css');
+@import url('./css/index.css');
 </style>
