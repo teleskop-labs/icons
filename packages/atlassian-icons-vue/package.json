@@ -51,13 +51,11 @@
   "peerDependencies": {
     "vue": "^3.3.0"
   },
-  "dependencies": {
-    "@teleskop-labs/icon": "workspace:*"
-  },
   "devDependencies": {
     "@pnpm/find-workspace-dir": "^6.0.2",
     "@pnpm/workspace.find-packages": "^1.0.5",
     "@teleskop-labs/atlassian-icons-svg": "workspace:*",
+    "@teleskop-labs/icon": "workspace:*",
     "@types/fs-extra": "^11.0.1",
     "chalk": "^5.3.0",
     "consola": "^3.2.3",
