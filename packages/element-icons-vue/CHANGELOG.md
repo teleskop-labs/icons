@@ -1,5 +1,13 @@
 # @teleskop-labs/element-icons-vue
 
+## 0.0.4
+
+### Patch Changes
+
+- Update
+- Updated dependencies
+  - @teleskop-labs/ui-kit-icon@0.0.4
+
 ## 0.0.3
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @teleskop-labs/atlassian-icons-vue
 
+## 0.0.4
+
+### Patch Changes
+
+- Update
+
 ## 0.0.3
 
 ### Patch Changes
