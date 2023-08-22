@@ -2,9 +2,8 @@
   "name": "@teleskop-labs/ui-kit-icon",
   "type": "module",
   "version": "0.0.3",
-  "private": "true",
-  "module": "./src/index.ts",
-  "types": "./src/index.ts",
+  "module": "./dist/index.js",
+  "types": "./dist/index.ts",
   "scripts": {
     "build": "run-p type-check build-only",
     "build-only": "vite build",

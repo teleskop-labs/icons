@@ -1,7 +1,7 @@
 <script setup lang="ts">
+import { useIcon } from './hooks'
 import type { NIconSlots, NInternalIconProps } from './NIcon.model'
 import { NInternalIconDefaultProps } from './NIcon.model'
-import { getIconSize } from './utils'
 
 defineOptions({
   name: 'NIcon',
@@ -11,7 +11,7 @@ const props = withDefaults(defineProps<NInternalIconProps>(), NInternalIconDefau
 
 defineSlots<NIconSlots>()
 
-const dimensions = getIconSize(props)
+const { sizeVars } = useIcon(props)
 </script>
 
 <template>
@@ -21,15 +21,11 @@ const dimensions = getIconSize(props)
     :aria-label="label ? label : undefined"
     :aria-hidden="label ? undefined : true"
     :style="{
-      ...dimensions,
+      ...sizeVars,
       '--n-comp-icon-primary-color': primaryColor,
-      '--n-comp-icon-secondary-color': secondaryColor || 'var(--n-sys-elevation-surface)',
+      '--n-comp-icon-secondary-color': secondaryColor,
     }"
   >
     <slot></slot>
   </span>
 </template>
-
-<style>
-@import url('./css/index.css');
-</style>

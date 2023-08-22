@@ -2,7 +2,7 @@ import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import { defineConfig } from 'vite'
 import ds from 'vite-plugin-dts'
-import { libInjectCss, scanEntries } from 'vite-plugin-lib-inject-css'
+import { scanEntries } from 'vite-plugin-lib-inject-css'
 import { viteStaticCopy } from 'vite-plugin-static-copy'
 
 const folders = ['core', 'bitbucket', 'editor', 'emoji', 'hipchat', 'jira', 'media-services']
@@ -48,14 +48,13 @@ export default defineConfig({
       cleanVueFileName: true,
       tsconfigPath: 'tsconfig.app.json',
     }),
-    libInjectCss(),
     viteStaticCopy({
       targets: folders.map((name) => {
         return {
           src: `src/${name}/index.ts`,
           dest: name,
           rename: 'index.js',
-          transform: (contents: string) => contents.toString().replaceAll(/.vue/g, ''),
+          transform: (contents: string) => contents.toString().replaceAll(/.vue/g, '.js'),
         }
       }),
     }),
@@ -64,28 +63,17 @@ export default defineConfig({
     target: 'esnext',
     cssTarget: 'chrome115',
     lib: {
-      // Could also be a dictionary or array of multiple entry points
       entry: {
         ...scan(folders),
       },
       formats: ['es'],
     },
     rollupOptions: {
-      // make sure to externalize deps that shouldn't be bundled
-      // into your library
       external: ['vue'],
       output: {
-        preserveModules: false,
-        // Put chunk files at <output>/chunks
         chunkFileNames: 'chunks/[name].[hash].js',
-        // Put chunk styles at <output>/assets
         assetFileNames: 'assets/[name][extname]',
         entryFileNames: '[name].js',
-        // Provide global variables to use in the UMD build
-        // for externalized deps
-        globals: {
-          vue: 'Vue',
-        },
       },
     },
   },

@@ -29,6 +29,7 @@ export interface NInternalIconProps extends NIconProps {
 
 export const NInternalIconDefaultProps = defintDefaultProps<NInternalIconProps>()({
   primaryColor: 'currentColor',
+  secondaryColor: 'var(--n-sys-elevation-surface)',
 })
 
 export type NInternalIconPropsWithDefaults = NPropsWithDefaults<NInternalIconProps, typeof NInternalIconDefaultProps>

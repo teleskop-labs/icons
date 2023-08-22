@@ -1,5 +1,3 @@
-import { fileURLToPath } from 'node:url'
-
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import { defineConfig } from 'vite'
@@ -34,7 +32,7 @@ export default defineConfig({
           src: `src/index.ts`,
           dest: '',
           rename: 'index.js',
-          transform: (contents: string) => contents.toString().replaceAll(/.vue/g, ''),
+          transform: (contents: string) => contents.toString().replaceAll(/.vue/g, '.js'),
         },
       ],
     }),
@@ -45,32 +43,16 @@ export default defineConfig({
     cssCodeSplit: true,
     copyPublicDir: false,
     lib: {
-      // Could also be a dictionary or array of multiple entry points
       entry: scan(),
       formats: ['es'],
     },
     rollupOptions: {
-      // make sure to externalize deps that shouldn't be bundled
-      // into your library
       external: ['vue'],
       output: {
-        preserveModules: false,
-        // Put chunk files at <output>/chunks
         chunkFileNames: 'chunks/[name].[hash].js',
-        // Put chunk styles at <output>/assets
         assetFileNames: 'assets/[name][extname]',
         entryFileNames: '[name].js',
-        // Provide global variables to use in the UMD build
-        // for externalized deps
-        globals: {
-          vue: 'Vue',
-        },
       },
-    },
-  },
-  resolve: {
-    alias: {
-      '@icon': fileURLToPath(new URL('icon/src', import.meta.url)),
     },
   },
 })

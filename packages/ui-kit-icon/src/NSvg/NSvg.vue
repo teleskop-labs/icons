@@ -29,13 +29,9 @@ const dimensions = computed(() => {
     :style="{
       ...dimensions,
       '--n-comp-svg-primary-color': primaryColor,
-      '--n-comp-svg-secondary-color': secondaryColor || 'var(--n-sys-elevation-surface)',
+      '--n-comp-svg-secondary-color': secondaryColor,
     }"
   >
     <slot />
   </svg>
 </template>
-
-<style>
-@import url('./css/index.css');
-</style>

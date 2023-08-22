@@ -10,6 +10,7 @@ export interface NSvgProps extends OtherGlyphProps, GlyphSizeProps, GlyphColorPr
 export const NSvgDefaultProps = defintDefaultProps<NSvgProps>()({
   size: 'medium',
   primaryColor: 'currentColor',
+  secondaryColor: 'var(--n-sys-elevation-surface)',
 })
 
 export type NSvgPropsWithDefaults = NPropsWithDefaults<NSvgProps, typeof NSvgDefaultProps>

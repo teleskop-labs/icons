@@ -5,19 +5,19 @@ import { addUnit } from '../../utils'
 import type { NInternalIconProps } from '../NIcon.model'
 
 export function useIcon(props: NInternalIconProps) {
-  const size = getIconSize(props)
+  const sizeVars = getIconSizeVars(props)
 
   return {
-    size,
+    sizeVars,
   }
 }
 
-export function getIconSize(props: NInternalIconProps) {
-  return computed(() => {
+function getIconSizeVars(props: NInternalIconProps) {
+  return computed<Record<string, string>>(() => {
     const size = getSizeRaw(props)
 
     if (!size) {
-      return undefined
+      return {} as Record<string, string>
     }
 
     return {
