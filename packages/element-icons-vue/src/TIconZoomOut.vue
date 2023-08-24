@@ -1,0 +1,21 @@
+<script setup lang="ts">
+import type { TIconProps } from '@teleskop-labs/ui-kit-icon'
+import { TIcon } from '@teleskop-labs/ui-kit-icon'
+
+defineOptions({
+  name: 'TIconZoomOut',
+})
+
+const props = defineProps<TIconProps>()
+</script>
+
+<template>
+  <TIcon v-bind="props">
+    <svg width="24" height="24" viewBox="0 0 1024 1024">
+      <path
+        fill="currentColor"
+        d="m795.904 750.72 124.992 124.928a32 32 0 0 1-45.248 45.248L750.656 795.904a416 416 0 1 1 45.248-45.248zM480 832a352 352 0 1 0 0-704 352 352 0 0 0 0 704zM352 448h256a32 32 0 0 1 0 64H352a32 32 0 0 1 0-64z"
+      />
+    </svg>
+  </TIcon>
+</template>

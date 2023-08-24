@@ -1,0 +1,24 @@
+<script setup lang="ts">
+import type { TIconProps } from '@teleskop-labs/ui-kit-icon'
+import { TIcon } from '@teleskop-labs/ui-kit-icon'
+
+defineOptions({
+  name: 'TIconAddCircle',
+})
+
+const props = defineProps<TIconProps>()
+</script>
+
+<template>
+  <TIcon v-bind="props">
+    <svg width="24" height="24" viewBox="0 0 24 24">
+      <g fill-rule="evenodd">
+        <circle cx="12" cy="12" r="10" fill="currentColor" />
+        <path
+          fill="inherit"
+          d="M11.046 7.958v3.088H7.958a.954.954 0 1 0 0 1.908h3.088v3.088a.954.954 0 1 0 1.908 0v-3.088h3.088a.954.954 0 1 0 0-1.908h-3.088V7.958a.954.954 0 1 0-1.908 0z"
+        />
+      </g>
+    </svg>
+  </TIcon>
+</template>

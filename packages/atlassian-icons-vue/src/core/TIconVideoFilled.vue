@@ -1,0 +1,21 @@
+<script setup lang="ts">
+import type { TIconProps } from '@teleskop-labs/ui-kit-icon'
+import { TIcon } from '@teleskop-labs/ui-kit-icon'
+
+defineOptions({
+  name: 'TIconVideoFilled',
+})
+
+const props = defineProps<TIconProps>()
+</script>
+
+<template>
+  <TIcon v-bind="props">
+    <svg width="24" height="24" viewBox="0 0 24 24">
+      <g fill="currentColor" fill-rule="evenodd">
+        <path d="M17.37 14.954 15 13.807v-3.613l2.37-1.148c.285-.138.63.05.63.343v5.222c0 .293-.345.481-.63.343" />
+        <rect width="8" height="6" x="6" y="9" rx="1" />
+      </g>
+    </svg>
+  </TIcon>
+</template>

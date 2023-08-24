@@ -26,8 +26,8 @@ type InferDefaults<T> = {
   [K in keyof T]?: InferDefault<T, T[K]>
 }
 
-// NPropsWithDefaults
-export type NPropsWithDefaults<T, P extends InferDefaults<T>> = PropsWithDefaults<T, P, BooleanKey<T>>
+// TPropsWithDefaults
+export type TPropsWithDefaults<T, P extends InferDefaults<T>> = PropsWithDefaults<T, P, BooleanKey<T>>
 
 // OptionalPropertyOf
 type OptionalPropertyOf<BaseType extends object> = Exclude<

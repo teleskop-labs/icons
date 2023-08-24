@@ -1,0 +1,21 @@
+<script setup lang="ts">
+import type { TIconProps } from '@teleskop-labs/ui-kit-icon'
+import { TIcon } from '@teleskop-labs/ui-kit-icon'
+
+defineOptions({
+  name: 'TIconDish',
+})
+
+const props = defineProps<TIconProps>()
+</script>
+
+<template>
+  <TIcon v-bind="props">
+    <svg width="24" height="24" viewBox="0 0 1024 1024">
+      <path
+        fill="currentColor"
+        d="M480 257.152V192h-96a32 32 0 0 1 0-64h256a32 32 0 1 1 0 64h-96v65.152A448 448 0 0 1 955.52 768H68.48A448 448 0 0 1 480 257.152zM128 704h768a384 384 0 1 0-768 0zM96 832h832a32 32 0 1 1 0 64H96a32 32 0 1 1 0-64z"
+      />
+    </svg>
+  </TIcon>
+</template>

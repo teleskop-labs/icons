@@ -1,0 +1,24 @@
+<script setup lang="ts">
+import type { TIconProps } from '@teleskop-labs/ui-kit-icon'
+import { TIcon } from '@teleskop-labs/ui-kit-icon'
+
+defineOptions({
+  name: 'TIconError',
+})
+
+const props = defineProps<TIconProps>()
+</script>
+
+<template>
+  <TIcon v-bind="props">
+    <svg width="24" height="24" viewBox="0 0 24 24">
+      <g fill-rule="evenodd">
+        <path
+          fill="currentColor"
+          d="M13.416 4.417a2.002 2.002 0 0 0-2.832 0l-6.168 6.167a2.002 2.002 0 0 0 0 2.833l6.168 6.167a2.002 2.002 0 0 0 2.832 0l6.168-6.167a2.002 2.002 0 0 0 0-2.833l-6.168-6.167z"
+        />
+        <path fill="inherit" d="M12 14a1 1 0 0 1-1-1V8a1 1 0 0 1 2 0v5a1 1 0 0 1-1 1m0 3a1 1 0 0 1 0-2 1 1 0 0 1 0 2" />
+      </g>
+    </svg>
+  </TIcon>
+</template>

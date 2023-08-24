@@ -31,7 +31,7 @@ function getName(file: string) {
 
   filename = snakeToCamel(filename)
 
-  filename = `NIcon${filename}`
+  filename = `TIcon${filename}`
   const componentName = filename
 
   return {
@@ -44,20 +44,20 @@ async function transformToVueComponent(file: string) {
 
   const { componentName } = getName(file)
   const vue = `<script setup lang="ts">
-import type { NIconProps } from '@teleskop-labs/ui-kit-icon'
-import { NIcon } from '@teleskop-labs/ui-kit-icon'
+import type { TIconProps } from '@teleskop-labs/ui-kit-icon'
+import { TIcon } from '@teleskop-labs/ui-kit-icon'
 
 defineOptions({
   name: '${componentName}',
 })
 
-const props = defineProps<NIconProps>()
+const props = defineProps<TIconProps>()
 </script>
 
 <template>
-  <NIcon v-bind="props">
+  <TIcon v-bind="props">
     ${content}
-  </NIcon>
+  </TIcon>
 </template>`
 
   writeFile(path.resolve(pathComponents, `${componentName}.vue`), vue, 'utf8')

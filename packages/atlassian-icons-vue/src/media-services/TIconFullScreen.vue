@@ -1,0 +1,22 @@
+<script setup lang="ts">
+import type { TIconProps } from '@teleskop-labs/ui-kit-icon'
+import { TIcon } from '@teleskop-labs/ui-kit-icon'
+
+defineOptions({
+  name: 'TIconFullScreen',
+})
+
+const props = defineProps<TIconProps>()
+</script>
+
+<template>
+  <TIcon v-bind="props">
+    <svg width="24" height="24" viewBox="0 0 24 24">
+      <path
+        fill="currentColor"
+        fill-rule="evenodd"
+        d="M16 8h3a1 1 0 0 1 0 2h-3a2 2 0 0 1-2-2V5a1 1 0 0 1 2 0v3zm-8 2H5a1 1 0 1 1 0-2h3V5a1 1 0 1 1 2 0v3a2 2 0 0 1-2 2zm8 4h3a1 1 0 0 1 0 2h-3v3a1 1 0 0 1-2 0v-3a2 2 0 0 1 2-2zm-8 2H5a1 1 0 0 1 0-2h3a2 2 0 0 1 2 2v3a1 1 0 0 1-2 0v-3z"
+      />
+    </svg>
+  </TIcon>
+</template>

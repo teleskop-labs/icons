@@ -1,2 +1,2 @@
-export * from './NIcon/index'
-export * from './NSvg/index'
+export * from './TIcon/index'
+export * from './TSvg/index'

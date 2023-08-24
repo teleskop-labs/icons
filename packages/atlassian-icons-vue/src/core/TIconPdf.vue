@@ -1,0 +1,27 @@
+<script setup lang="ts">
+import type { TIconProps } from '@teleskop-labs/ui-kit-icon'
+import { TIcon } from '@teleskop-labs/ui-kit-icon'
+
+defineOptions({
+  name: 'TIconPdf',
+})
+
+const props = defineProps<TIconProps>()
+</script>
+
+<template>
+  <TIcon v-bind="props">
+    <svg width="24" height="24" viewBox="0 0 24 24">
+      <g fill-rule="evenodd">
+        <rect width="14" height="16" x="5" y="4" fill="currentColor" rx="2" />
+        <rect width="8" height="2" x="8" y="8" fill="inherit" rx="1" />
+        <path
+          fill="inherit"
+          d="M15.512 16H13.49a.492.492 0 0 1-.489-.497v-4.006c0-.275.218-.497.489-.497h2.023c.27 0 .488.222.488.497v4.006a.492.492 0 0 1-.488.497"
+        />
+        <rect width="4" height="2" x="8" y="11" fill="inherit" rx="1" />
+        <rect width="4" height="2" x="8" y="14" fill="inherit" rx="1" />
+      </g>
+    </svg>
+  </TIcon>
+</template>

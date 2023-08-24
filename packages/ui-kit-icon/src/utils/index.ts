@@ -1,2 +1,3 @@
 export { addUnit } from './dom'
-export { defintDefaultProps, type NPropsWithDefaults } from './vue'
+export type { TPropsWithDefaults } from './vue'
+export { defintDefaultProps } from './vue'

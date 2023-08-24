@@ -1,0 +1,21 @@
+<script setup lang="ts">
+import type { TIconProps } from '@teleskop-labs/ui-kit-icon'
+import { TIcon } from '@teleskop-labs/ui-kit-icon'
+
+defineOptions({
+  name: 'TIconUnderline',
+})
+
+const props = defineProps<TIconProps>()
+</script>
+
+<template>
+  <TIcon v-bind="props">
+    <svg width="24" height="24" viewBox="0 0 24 24">
+      <path
+        fill="currentColor"
+        d="M7 7a1 1 0 1 1 2 0v4c0 1.884.93 3 3 3s3-1.116 3-3V7a1 1 0 0 1 2 0v4c0 2.916-1.737 5-5 5s-5-2.084-5-5V7zm0 10h10a1 1 0 0 1 0 2H7a1 1 0 0 1 0-2z"
+      />
+    </svg>
+  </TIcon>
+</template>

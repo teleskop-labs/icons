@@ -1,4 +1,4 @@
-export { default as NIconCapture } from './NIconCapture.vue'
-export { default as NIconFailedBuildStatus } from './NIconFailedBuildStatus.vue'
-export { default as NIconLabs } from './NIconLabs.vue'
-export { default as NIconTestSession } from './NIconTestSession.vue'
+export { default as TIconCapture } from './TIconCapture.vue'
+export { default as TIconFailedBuildStatus } from './TIconFailedBuildStatus.vue'
+export { default as TIconLabs } from './TIconLabs.vue'
+export { default as TIconTestSession } from './TIconTestSession.vue'

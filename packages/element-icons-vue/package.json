@@ -9,6 +9,8 @@
     "dist"
   ],
   "scripts": {
+    "build": "run-p generate build-only",
+    "build-only": "vite build",
     "type-check": "vue-tsc --noEmit -p ./tsconfig.app.json --composite false",
     "generate": "pnpm run generate-only && pnpm run prettier:fix && pnpm run eslint:fix && pnpm run type-check",
     "generate-only": "tsx build-icons/generate.ts",
