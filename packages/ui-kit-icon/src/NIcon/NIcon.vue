@@ -18,8 +18,9 @@ const { sizeVars } = useIcon(props)
   <span
     class="n-icon"
     :role="label ? 'img' : undefined"
-    :aria-label="label ? label : undefined"
+    :aria-label="label"
     :aria-hidden="label ? undefined : true"
+    :data-testid="testId"
     :style="{
       ...sizeVars,
       '--n-comp-icon-primary-color': primaryColor,

@@ -26,6 +26,9 @@ const dimensions = computed(() => {
   <svg
     class="n-svg"
     viewBox="0 0 24 24"
+    :data-testid="testId"
+    :role="label ? 'img' : 'presentation'"
+    :aria-label="label"
     :style="{
       ...dimensions,
       '--n-comp-svg-primary-color': primaryColor,
