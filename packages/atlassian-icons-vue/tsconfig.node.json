@@ -3,6 +3,8 @@
   "include": ["vite.config.*"],
   "compilerOptions": {
     "composite": true,
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
     "libs": ["ESNext", "DOM", "DOM.Iterable"],
     "types": ["node"]
   }
