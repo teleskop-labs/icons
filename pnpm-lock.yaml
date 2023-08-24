@@ -7,10 +7,6 @@ settings:
 importers:
 
   .:
-    dependencies:
-      vue:
-        specifier: 3.3.4
-        version: 3.3.4
     devDependencies:
       '@changesets/cli':
         specifier: 2.26.2
@@ -69,9 +65,6 @@ importers:
       prettier:
         specifier: 3.0.2
         version: 3.0.2
-      rimraf:
-        specifier: 5.0.1
-        version: 5.0.1
       stylelint:
         specifier: 15.10.3
         version: 15.10.3
@@ -110,6 +103,13 @@ importers:
         version: 3.0.2
 
   packages/atlassian-icons-vue:
+    dependencies:
+      '@teleskop-labs/ui-kit-icon':
+        specifier: workspace:*
+        version: link:../ui-kit-icon
+      vue:
+        specifier: 3.3.4
+        version: 3.3.4
     devDependencies:
       '@pnpm/find-workspace-dir':
         specifier: 6.0.2
@@ -120,9 +120,6 @@ importers:
       '@teleskop-labs/atlassian-icons-svg':
         specifier: workspace:*
         version: link:../atlassian-icons-svg
-      '@teleskop-labs/ui-kit-icon':
-        specifier: workspace:*
-        version: link:../ui-kit-icon
       '@types/fs-extra':
         specifier: 11.0.1
         version: 11.0.1
@@ -153,6 +150,9 @@ importers:
       '@teleskop-labs/ui-kit-icon':
         specifier: workspace:*
         version: link:../ui-kit-icon
+      vue:
+        specifier: 3.3.4
+        version: 3.3.4
     devDependencies:
       '@pnpm/find-workspace-dir':
         specifier: 6.0.2
@@ -7217,14 +7217,6 @@ packages:
     hasBin: true
     dependencies:
       glob: 7.2.3
-    dev: true
-
-  /rimraf@5.0.1:
-    resolution: {integrity: sha512-OfFZdwtd3lZ+XZzYP/6gTACubwFcHdLRqS9UX3UwpU2dnGQYkPFISRwvM3w9IiB2w7bW5qGo/uAwE4SmXXSKvg==}
-    engines: {node: '>=14'}
-    hasBin: true
-    dependencies:
-      glob: 10.3.3
     dev: true
 
   /rollup@3.28.1:

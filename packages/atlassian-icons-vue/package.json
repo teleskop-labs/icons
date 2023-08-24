@@ -47,13 +47,16 @@
     "prettier:fix": "prettier --write --ignore-unknown \"**/*\"",
     "eslint": "eslint \"**/*.{js,jsx,cjs,mjs,ts,tsx,cts,mts,json,vue}\"",
     "eslint:fix": "eslint --fix \"**/*.{js,jsx,cjs,mjs,ts,tsx,cts,mts,json,vue}\" --fix",
-    "clean": "rimraf .turbo && rimraf node_modules"
+    "clean": "rm -rf .turbo && rm -rf node_modules"
+  },
+  "dependencies": {
+    "vue": "3.3.4",
+    "@teleskop-labs/ui-kit-icon": "workspace:*"
   },
   "devDependencies": {
     "@pnpm/find-workspace-dir": "6.0.2",
     "@pnpm/workspace.find-packages": "1.0.5",
     "@teleskop-labs/atlassian-icons-svg": "workspace:*",
-    "@teleskop-labs/ui-kit-icon": "workspace:*",
     "@types/fs-extra": "11.0.1",
     "chalk": "5.3.0",
     "consola": "3.2.3",
