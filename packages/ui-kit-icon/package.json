@@ -11,6 +11,7 @@
     "prettier": "prettier --check --ignore-unknown \"**/*\"",
     "prettier:fix": "prettier --write --ignore-unknown \"**/*\"",
     "eslint": "eslint \"**/*.{js,jsx,cjs,mjs,ts,tsx,cts,mts,json,vue}\"",
-    "eslint:fix": "eslint --fix \"**/*.{js,jsx,cjs,mjs,ts,tsx,cts,mts,json,vue}\" --fix"
+    "eslint:fix": "eslint --fix \"**/*.{js,jsx,cjs,mjs,ts,tsx,cts,mts,json,vue}\" --fix",
+    "clean": "rimraf .turbo && rimraf node_modules"
   }
 }

@@ -6,9 +6,10 @@
   ],
   "sideEffects": false,
   "scripts": {
-    "optimize": "svgo --config ./svgo.config.js -f ./src -o ./src"
+    "optimize": "svgo --config ./svgo.config.js -f ./src -o ./src",
+    "clean": "rimraf .turbo && rimraf node_modules"
   },
   "devDependencies": {
-    "svgo": "^3.0.2"
+    "svgo": "3.0.2"
   }
 }
