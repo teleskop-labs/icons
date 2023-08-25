@@ -1,32 +1,27 @@
-name: Snapshot Release
-
+name: Storybook
 on:
+  push:
+    branches:
+      - main
   workflow_dispatch:
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
-  snapshot:
-    name: Snapshot Release
+  build-and-deploy:
+    name: Storybook Release 🎈
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout Repository
+      - name: Checkout 🛎️
         uses: actions/checkout@v3
 
-      - name: Creating .npmrc file
-        run: |
-          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" >> .npmrc
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      - name: Install Node.js
+      - name: Install Node.js 🕑
         uses: actions/setup-node@v3
         with:
           node-version: 18.x
           registry-url: https://registry.npmjs.org
 
-      - name: Install pnpm
+      - name: Install pnpm 🕑
         uses: pnpm/action-setup@v2
         with:
           version: 8
@@ -37,8 +32,8 @@ jobs:
         run: |
           echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
 
-      - uses: actions/cache@v3
-        name: Setup pnpm cache
+      - name: Setup pnpm cache
+        uses: actions/cache@v3
         with:
           path: ${{ env.STORE_PATH }}
           key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
@@ -51,14 +46,8 @@ jobs:
       - name: Build 🤞
         run: pnpm build
 
-      - name: Create Snapshot Release 🚀
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          pnpm run version --snapshot "${{ github.ref_name }}"
-          echo '---'
-          echo 'Detected Changes:'
-          git diff
-          echo '---'
-          pnpm run publish --tag "${{ github.ref_name }}" --no-git-tag
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: docs/icons/dist # The folder that the build-storybook script generates files.
+          target-folder: docs # The folder that we serve our Storybook files from

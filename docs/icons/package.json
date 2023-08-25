@@ -1,10 +1,10 @@
 {
-  "name": "@teleskop-labs/docs-icons",
+  "name": "docs-icons",
   "version": "0.0.0",
   "private": true,
   "scripts": {
     "dev": "storybook dev -p 6006",
-    "build": "storybook build",
+    "build": "storybook build -o dist",
     "type-check": "vue-tsc --noEmit -p tsconfig.app.json --composite false",
     "clean": "rm -rf .turbo && rm -rf node_modules"
   },

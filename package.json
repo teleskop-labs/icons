@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "prepare": "husky install",
+    "dev": "turbo run dev",
     "build": "turbo run build",
     "type-check": "turbo run type-check --parallel",
     "prettier": "turbo run prettier --parallel",

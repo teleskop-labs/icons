@@ -34,7 +34,8 @@
       "outputs": []
     },
     "dev": {
-      "cache": false
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**"]
     }
   }
 }
