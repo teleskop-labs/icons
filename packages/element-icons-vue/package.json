@@ -21,8 +21,8 @@
     "clean": "rm -rf .turbo && rm -rf node_modules"
   },
   "dependencies": {
-    "vue": "3.3.4",
-    "@teleskop-labs/ui-kit-icon": "workspace:*"
+    "@teleskop-labs/ui-kit-icon": "workspace:*",
+    "vue": "3.3.4"
   },
   "devDependencies": {
     "@pnpm/find-workspace-dir": "6.0.2",
