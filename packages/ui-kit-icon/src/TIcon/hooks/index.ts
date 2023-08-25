@@ -21,8 +21,8 @@ function getIconSizeVars(props: TInternalIconProps) {
     }
 
     return {
-      '--n-comp-icon-size-width': addUnit(size.width),
-      '--n-comp-icon-size-height': addUnit(size.height),
+      '--t-comp-icon-size-width': addUnit(size.width),
+      '--t-comp-icon-size-height': addUnit(size.height),
     }
   })
 }
