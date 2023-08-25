@@ -13,7 +13,7 @@
     "optimize:emoji": "svgo --config ./svgo.config.js -f ./src/emoji -o ./src/emoji",
     "optimize:jira": "svgo --config ./svgo.config.js -f ./src/jira -o ./src/jira",
     "optimize:media-services": "svgo --config ./svgo.config.js -f ./src/media-services -o ./src/media-services",
-    "clean": "rm -rf .turbo && rm -rf node_modules"
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
   "devDependencies": {
     "svgo": "3.0.2"
